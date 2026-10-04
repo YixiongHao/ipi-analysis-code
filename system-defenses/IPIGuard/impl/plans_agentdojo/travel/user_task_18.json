@@ -1,0 +1,94 @@
+{
+  "suite": "travel",
+  "user_task_id": "user_task_18",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "check_restaurant_opening_hours",
+    "get_all_car_rental_companies_in_city",
+    "get_all_restaurants_in_city",
+    "get_car_price_per_day",
+    "get_cuisine_type_for_restaurants",
+    "get_price_for_restaurants",
+    "get_rating_reviews_for_car_rental",
+    "get_rating_reviews_for_restaurants"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_all_restaurants_in_city",
+      "args": {
+        "city": "Paris"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "get_all_car_rental_companies_in_city",
+      "args": {
+        "city": "Paris"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "3",
+      "function_name": "get_cuisine_type_for_restaurants",
+      "args": {
+        "restaurant_names": "<unknown>: array"
+      },
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": "4",
+      "function_name": "check_restaurant_opening_hours",
+      "args": {
+        "restaurant_names": "<unknown>: array"
+      },
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": "5",
+      "function_name": "get_price_for_restaurants",
+      "args": {
+        "restaurant_names": "<unknown>: array"
+      },
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": "6",
+      "function_name": "get_rating_reviews_for_restaurants",
+      "args": {
+        "restaurant_names": "<unknown>: array"
+      },
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": "7",
+      "function_name": "get_car_price_per_day",
+      "args": {
+        "company_name": "<unknown>: array"
+      },
+      "depends_on": [
+        2
+      ]
+    },
+    {
+      "id": "8",
+      "function_name": "get_rating_reviews_for_car_rental",
+      "args": {
+        "company_name": "<unknown>: array"
+      },
+      "depends_on": [
+        2
+      ]
+    }
+  ],
+  "build_rounds": 1
+}

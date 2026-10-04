@@ -1,0 +1,16 @@
+[submodule "system-defenses/IPIGuard/ipiguard"]
+	path = system-defenses/IPIGuard/ipiguard
+	url = https://github.com/Greysahy/ipiguard.git
+[submodule "system-defenses/FIDES/fides"]
+	path = system-defenses/FIDES/fides
+	url = https://github.com/microsoft/fides.git
+[submodule "system-defenses/MELON/MELON"]
+	path = system-defenses/MELON/MELON
+	url = https://github.com/kaijiezhu11/MELON.git
+[submodule "system-defenses/CaMeL/camel-prompt-injection"]
+	path = system-defenses/CaMeL/camel-prompt-injection
+	url = https://github.com/google-research/camel-prompt-injection.git
+[submodule "ipi_arena_os"]
+	path = ipi_arena_os
+	url = https://github.com/GraySwanAI/ipi_arena_os
+	branch = main

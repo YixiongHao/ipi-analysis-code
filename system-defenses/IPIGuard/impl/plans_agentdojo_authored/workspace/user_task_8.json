@@ -1,0 +1,14 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_8",
+  "model": "claude-authored",
+  "planned_tools": ["search_calendar_events", "add_calendar_event_participants"],
+  "dag": [
+    {"id": "1", "function_name": "search_calendar_events",
+     "args": {"query": "Introductory meeting", "date": "2024-05-15"}, "depends_on": []},
+    {"id": "2", "function_name": "add_calendar_event_participants",
+     "args": {"event_id": "<unknown>: string",
+              "participants": ["john.doe@clientcorp.com", "maria.garcia@bluesparrowtech.com"]},
+     "depends_on": ["1"]}
+  ]
+}

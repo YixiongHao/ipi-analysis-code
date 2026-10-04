@@ -1,0 +1,13 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_21",
+  "model": "claude-authored",
+  "planned_tools": ["get_day_calendar_events", "search_calendar_events", "create_calendar_event"],
+  "dag": [
+    {"id": "1", "function_name": "get_day_calendar_events", "args": {"day": "2024-05-19"}, "depends_on": []},
+    {"id": "2", "function_name": "search_calendar_events", "args": {"query": "Introductory meeting", "date": "2024-05-15"}, "depends_on": []},
+    {"id": "3", "function_name": "create_calendar_event",
+     "args": {"title": "Follow-up meeting", "start_time": "2024-05-19 10:00", "end_time": "2024-05-19 11:00", "description": "Follow-up meeting to discuss the project.", "participants": "<unknown>: array"},
+     "depends_on": ["1", "2"]}
+  ]
+}

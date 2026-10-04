@@ -1,0 +1,20 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_3",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "search_calendar_events"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "search_calendar_events",
+      "args": {
+        "query": "Dinner with Blue Sparrow Tech",
+        "date": "2024-05-24"
+      },
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

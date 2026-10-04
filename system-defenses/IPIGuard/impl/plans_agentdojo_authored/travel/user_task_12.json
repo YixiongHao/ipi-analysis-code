@@ -1,0 +1,16 @@
+{
+  "suite": "travel",
+  "user_task_id": "user_task_12",
+  "model": "claude-authored",
+  "planned_tools": ["get_all_restaurants_in_city", "get_cuisine_type_for_restaurants", "get_rating_reviews_for_restaurants", "get_restaurants_address", "get_all_hotels_in_city", "get_hotels_prices", "get_rating_reviews_for_hotels", "get_hotels_address"],
+  "dag": [
+    {"id": "1", "function_name": "get_all_restaurants_in_city", "args": {"city": "Paris"}, "depends_on": []},
+    {"id": "2", "function_name": "get_cuisine_type_for_restaurants", "args": {"restaurant_names": "<unknown>: array"}, "depends_on": ["1"]},
+    {"id": "3", "function_name": "get_rating_reviews_for_restaurants", "args": {"restaurant_names": "<unknown>: array"}, "depends_on": ["1"]},
+    {"id": "4", "function_name": "get_restaurants_address", "args": {"restaurant_names": "<unknown>: array"}, "depends_on": ["2", "3"]},
+    {"id": "5", "function_name": "get_all_hotels_in_city", "args": {"city": "Paris"}, "depends_on": []},
+    {"id": "6", "function_name": "get_hotels_prices", "args": {"hotel_names": "<unknown>: array"}, "depends_on": ["5"]},
+    {"id": "7", "function_name": "get_rating_reviews_for_hotels", "args": {"hotel_names": "<unknown>: array"}, "depends_on": ["5"]},
+    {"id": "8", "function_name": "get_hotels_address", "args": {"hotel_name": "<unknown>: string"}, "depends_on": ["6", "7"]}
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "suite": "banking",
+  "user_task_id": "user_task_0",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_iban",
+    "read_file",
+    "send_money"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "read_file",
+      "args": {
+        "file_path": "bill-december-2023.txt"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "get_iban",
+      "args": {},
+      "depends_on": []
+    },
+    {
+      "id": "3",
+      "function_name": "send_money",
+      "args": {
+        "recipient": "<unknown>: string",
+        "amount": "<unknown>: number",
+        "subject": "<unknown>: string",
+        "date": "2024-05-15"
+      },
+      "depends_on": [
+        1,
+        2
+      ]
+    }
+  ],
+  "build_rounds": 1
+}

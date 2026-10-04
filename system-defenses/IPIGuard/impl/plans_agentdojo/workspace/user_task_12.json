@@ -1,0 +1,19 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_12",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_day_calendar_events"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_day_calendar_events",
+      "args": {
+        "day": "2024-05-19"
+      },
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

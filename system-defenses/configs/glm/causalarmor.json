@@ -1,0 +1,49 @@
+{
+  "store_id": "glm__causalarmor",
+  "defense_id": "causalarmor",
+  "defense_type": "loo_attribution",
+  "target": {
+    "model": "z-ai/glm-5.2",
+    "base_url": "https://openrouter.ai/api/v1",
+    "provider_pin": "z-ai",
+    "thinking": false,
+    "temperature": 1.0
+  },
+  "runner": {
+    "kind": "adapter",
+    "entry": "ipi_eval/run_eval.py",
+    "venv": "python -m ipi_eval.run_eval  (cwd=system-defenses)",
+    "cmd": "run_eval.py --defense causalarmor-nocot --model z-ai/glm-5.2 --base-url https://openrouter.ai/api/v1 --temperature 1.0 --live-carrier --defense-kwarg proxy_model=gemma-3-12b-it --defense-kwarg base_url=http://localhost:8002/v1 --defense-kwarg tokenizer_path=google/gemma-3-12b-it",
+    "grader": "built-in Arena judge -> results/causalarmor-nocot.jsonl"
+  },
+  "delivery": "--live-carrier",
+  "params": {
+    "registry": "causalarmor-nocot",
+    "cot_masking": false,
+    "live_carrier": true,
+    "temperature": 1.0
+  },
+  "worldsim": {
+    "mode": "all",
+    "goal_aware": true,
+    "model": "google/gemini-3-flash-preview",
+    "base_url": "https://openrouter.ai/api/v1"
+  },
+  "aux_models": {
+    "proxy_logprob": "gemma-3-12b-it",
+    "proxy_base_url": "http://localhost:8002/v1",
+    "sanitizer": "google/gemini-3-flash-preview",
+    "agent": "target"
+  },
+  "judge": {
+    "model": "google/gemini-3-flash-preview",
+    "base_url": "https://openrouter.ai/api/v1",
+    "thinking": true,
+    "temperature": 0.0,
+    "max_tokens": 8192,
+    "rubric_source": "per-corpus behaviors_detailed.json (auto by behavior_id)"
+  },
+  "description": "Leave-one-out logprob attribution (gemma proxy) + injected-span sanitize (Gemini) + action re-generation; CoT masking OFF.",
+  "notes": "proxy needs a LOCAL vLLM server on :8002 exposing token logprobs (Gemini can't); nocot per validation-best.",
+  "config_hash": "2144a0006338"
+}

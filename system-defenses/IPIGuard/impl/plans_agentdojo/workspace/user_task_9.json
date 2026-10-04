@@ -1,0 +1,35 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_9",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "create_calendar_event",
+    "search_calendar_events"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "search_calendar_events",
+      "args": {
+        "query": "Introductory meeting",
+        "date": "2024-05-15"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "create_calendar_event",
+      "args": {
+        "title": "Follow-up meeting",
+        "start_time": "2024-05-16 10:00",
+        "end_time": "2024-05-16 11:00",
+        "description": "Follow-up meeting to discuss the project.",
+        "participants": "<unknown>: array"
+      },
+      "depends_on": [
+        1
+      ]
+    }
+  ],
+  "build_rounds": 1
+}

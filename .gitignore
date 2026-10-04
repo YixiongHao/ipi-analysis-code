@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.DS_Store
+secrets.md
+
+# generated per user from their own data (contain attack strings)
+system-defenses/CaMeL/ipi_suites/packets/
+system-defenses/CaMeL/ipi_suites/plans/
+system-defenses/IPIGuard/ipi_suites/plans/

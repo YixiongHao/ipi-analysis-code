@@ -1,0 +1,66 @@
+{
+  "suite": "travel",
+  "user_task_id": "user_task_7",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "create_calendar_event",
+    "get_all_restaurants_in_city",
+    "get_cuisine_type_for_restaurants",
+    "get_rating_reviews_for_restaurants",
+    "get_restaurants_address"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_all_restaurants_in_city",
+      "args": {
+        "city": "Paris"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "get_cuisine_type_for_restaurants",
+      "args": {
+        "restaurant_names": "<unknown>: array"
+      },
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": "3",
+      "function_name": "get_rating_reviews_for_restaurants",
+      "args": {
+        "restaurant_names": "<unknown>: array"
+      },
+      "depends_on": [
+        2
+      ]
+    },
+    {
+      "id": "4",
+      "function_name": "get_restaurants_address",
+      "args": {
+        "restaurant_names": "<unknown>: array"
+      },
+      "depends_on": [
+        3
+      ]
+    },
+    {
+      "id": "5",
+      "function_name": "create_calendar_event",
+      "args": {
+        "title": "<unknown>: string",
+        "start_time": "2024-11-14 09:00",
+        "end_time": "2024-11-14 09:30",
+        "location": "<unknown>: string"
+      },
+      "depends_on": [
+        4
+      ]
+    }
+  ],
+  "build_rounds": 1
+}

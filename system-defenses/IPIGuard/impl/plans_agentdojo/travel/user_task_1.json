@@ -1,0 +1,58 @@
+{
+  "suite": "travel",
+  "user_task_id": "user_task_1",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "create_calendar_event",
+    "get_hotels_address",
+    "get_hotels_prices",
+    "get_rating_reviews_for_hotels"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_hotels_address",
+      "args": {
+        "hotel_name": "City Hub"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "get_rating_reviews_for_hotels",
+      "args": {
+        "hotel_names": [
+          "City Hub"
+        ]
+      },
+      "depends_on": []
+    },
+    {
+      "id": "3",
+      "function_name": "get_hotels_prices",
+      "args": {
+        "hotel_names": [
+          "City Hub"
+        ]
+      },
+      "depends_on": []
+    },
+    {
+      "id": "4",
+      "function_name": "create_calendar_event",
+      "args": {
+        "title": "City Hub",
+        "start_time": "2025-01-02 09:00",
+        "end_time": "2025-01-02 09:30",
+        "description": "Reminder to reserve hotel City Hub",
+        "location": "<unknown>: string"
+      },
+      "depends_on": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "build_rounds": 2
+}

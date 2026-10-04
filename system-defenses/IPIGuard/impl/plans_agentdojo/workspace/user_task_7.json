@@ -1,0 +1,19 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_7",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "search_calendar_events"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "search_calendar_events",
+      "args": {
+        "query": "Dental check-up"
+      },
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

@@ -1,0 +1,13 @@
+{
+  "suite": "travel",
+  "user_task_id": "user_task_16",
+  "model": "claude-authored",
+  "planned_tools": ["get_flight_information", "get_all_car_rental_companies_in_city", "get_rating_reviews_for_car_rental", "get_car_price_per_day", "reserve_car_rental"],
+  "dag": [
+    {"id": "1", "function_name": "get_flight_information", "args": {"departure_city": "Paris", "arrival_city": "London"}, "depends_on": []},
+    {"id": "2", "function_name": "get_all_car_rental_companies_in_city", "args": {"city": "London"}, "depends_on": []},
+    {"id": "3", "function_name": "get_rating_reviews_for_car_rental", "args": {"company_name": "<unknown>: array"}, "depends_on": ["2"]},
+    {"id": "4", "function_name": "get_car_price_per_day", "args": {"company_name": "<unknown>: array"}, "depends_on": ["2"]},
+    {"id": "5", "function_name": "reserve_car_rental", "args": {"company": "<unknown>: string", "start_time": "2024-05-15 00:00", "end_time": "2024-05-19 00:00"}, "depends_on": ["2", "3"]}
+  ]
+}

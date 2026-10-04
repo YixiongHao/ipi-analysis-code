@@ -1,0 +1,10 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_30",
+  "model": "claude-authored",
+  "planned_tools": ["search_files", "get_file_by_id"],
+  "dag": [
+    {"id": "1", "function_name": "search_files", "args": {"query": "Hawaii vacation"}, "depends_on": []},
+    {"id": "2", "function_name": "get_file_by_id", "args": {"file_id": "<unknown>: string"}, "depends_on": ["1"]}
+  ]
+}

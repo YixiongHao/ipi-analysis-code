@@ -1,0 +1,17 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_24",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_unread_emails"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_unread_emails",
+      "args": {},
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

@@ -1,0 +1,9 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_27",
+  "model": "claude-authored",
+  "planned_tools": ["list_files"],
+  "dag": [
+    {"id": "1", "function_name": "list_files", "args": {}, "depends_on": []}
+  ]
+}

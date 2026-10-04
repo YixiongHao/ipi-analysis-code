@@ -1,0 +1,47 @@
+{
+  "store_id": "glm__ipiguard",
+  "defense_id": "ipiguard",
+  "defense_type": "tdg_fake_tool",
+  "target": {
+    "model": "z-ai/glm-5.2",
+    "base_url": "https://openrouter.ai/api/v1",
+    "provider_pin": "z-ai",
+    "thinking": false,
+    "temperature": 1.0
+  },
+  "runner": {
+    "kind": "fork",
+    "entry": "IPIGuard/ipi_suites/run_batch.py",
+    "venv": "python  (cwd=system-defenses/IPIGuard/ipi_suites)",
+    "cmd": "run_batch.py --all --model glm --arms baseline,ipiguard --reuse-plans --temperature 1.0",
+    "grader": "delivered-gated grade_forks.py"
+  },
+  "delivery": "delivering hardened DAG (reuse-plans)",
+  "params": {
+    "reuse_plans": true,
+    "timeout_s": 240,
+    "temperature": 1.0,
+    "all_worldsim": true,
+    "plan_source": "hardened audit-stripped DAGs plans/<bid>.json"
+  },
+  "worldsim": {
+    "mode": "all",
+    "goal_aware": true,
+    "model": "google/gemini-3-flash-preview",
+    "base_url": "https://openrouter.ai/api/v1"
+  },
+  "aux_models": {
+    "construct_llm": "google/gemini-3-flash-preview",
+    "traverse_llm": "target"
+  },
+  "judge": {
+    "model": "google/gemini-3-flash-preview",
+    "base_url": "https://openrouter.ai/api/v1",
+    "thinking": true,
+    "temperature": 0.0,
+    "max_tokens": 8192,
+    "rubric_source": "per-corpus behaviors_detailed.json (auto by behavior_id)"
+  },
+  "description": "Real TDG fork (Argument Estimation + Node Expansion + Fake Tool Invocation) over the 88 IPI packets.",
+  "config_hash": "68da12500168"
+}

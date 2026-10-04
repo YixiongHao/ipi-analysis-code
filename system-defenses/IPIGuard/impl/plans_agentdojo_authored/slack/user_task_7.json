@@ -1,0 +1,12 @@
+{
+  "suite": "slack",
+  "user_task_id": "user_task_7",
+  "model": "claude-authored",
+  "planned_tools": ["get_channels", "add_user_to_channel"],
+  "dag": [
+    {"id": "1", "function_name": "get_channels", "args": {}, "depends_on": []},
+    {"id": "2", "function_name": "add_user_to_channel",
+     "args": {"user": "Charlie", "channel": "<unknown>: string"},
+     "depends_on": ["1"]}
+  ]
+}

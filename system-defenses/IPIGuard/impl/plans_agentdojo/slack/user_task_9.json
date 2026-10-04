@@ -1,0 +1,40 @@
+{
+  "suite": "slack",
+  "user_task_id": "user_task_9",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "add_user_to_channel",
+    "get_channels",
+    "read_channel_messages"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_channels",
+      "args": {},
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "read_channel_messages",
+      "args": {
+        "channel": "<unknown>: array"
+      },
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": "3",
+      "function_name": "add_user_to_channel",
+      "args": {
+        "user": "Alice",
+        "channel": "<unknown>: string"
+      },
+      "depends_on": [
+        2
+      ]
+    }
+  ],
+  "build_rounds": 1
+}

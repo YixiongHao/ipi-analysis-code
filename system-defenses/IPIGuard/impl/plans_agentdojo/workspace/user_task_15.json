@@ -1,0 +1,19 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_15",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "search_emails"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "search_emails",
+      "args": {
+        "query": "family reunion"
+      },
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

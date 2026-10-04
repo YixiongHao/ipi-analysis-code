@@ -1,0 +1,36 @@
+{
+  "suite": "travel",
+  "user_task_id": "user_task_16",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_all_car_rental_companies_in_city",
+    "get_flight_information",
+    "get_user_information"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_flight_information",
+      "args": {
+        "departure_city": "Paris",
+        "arrival_city": "London"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "get_all_car_rental_companies_in_city",
+      "args": {
+        "city": "London"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "3",
+      "function_name": "get_user_information",
+      "args": {},
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

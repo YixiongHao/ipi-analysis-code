@@ -1,0 +1,19 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_15",
+  "model": "claude-authored",
+  "planned_tools": ["search_emails", "create_calendar_event"],
+  "dag": [
+    {"id": "1", "function_name": "search_emails",
+     "args": {"query": "family reunion"},
+     "depends_on": []},
+    {"id": "2", "function_name": "create_calendar_event",
+     "args": {"title": "Family Reunion",
+              "start_time": "<unknown>: string",
+              "end_time": "<unknown>: string",
+              "description": "<unknown>: string",
+              "location": "<unknown>: string",
+              "participants": "<unknown>: array"},
+     "depends_on": ["1"]}
+  ]
+}

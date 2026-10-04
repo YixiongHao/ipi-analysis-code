@@ -1,0 +1,10 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_2",
+  "model": "claude-authored",
+  "planned_tools": ["get_current_day", "search_calendar_events"],
+  "dag": [
+    {"id": "1", "function_name": "get_current_day", "args": {}, "depends_on": []},
+    {"id": "2", "function_name": "search_calendar_events", "args": {"query": "Yoga"}, "depends_on": []}
+  ]
+}

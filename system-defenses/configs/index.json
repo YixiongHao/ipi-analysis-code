@@ -1,0 +1,146 @@
+[
+  {
+    "store_id": "glm__camel",
+    "path": "glm/camel.json",
+    "target_model": "z-ai/glm-5.2",
+    "defense_id": "camel",
+    "runner_kind": "fork",
+    "config_hash": "b32849ff6f1e"
+  },
+  {
+    "store_id": "glm__fides",
+    "path": "glm/fides.json",
+    "target_model": "z-ai/glm-5.2",
+    "defense_id": "fides",
+    "runner_kind": "fork",
+    "config_hash": "2d772d537303"
+  },
+  {
+    "store_id": "glm__ipiguard",
+    "path": "glm/ipiguard.json",
+    "target_model": "z-ai/glm-5.2",
+    "defense_id": "ipiguard",
+    "runner_kind": "fork",
+    "config_hash": "68da12500168"
+  },
+  {
+    "store_id": "glm__melon",
+    "path": "glm/melon.json",
+    "target_model": "z-ai/glm-5.2",
+    "defense_id": "melon",
+    "runner_kind": "adapter",
+    "config_hash": "2c0f5d370abd"
+  },
+  {
+    "store_id": "glm__causalarmor",
+    "path": "glm/causalarmor.json",
+    "target_model": "z-ai/glm-5.2",
+    "defense_id": "causalarmor",
+    "runner_kind": "adapter",
+    "config_hash": "2144a0006338"
+  },
+  {
+    "store_id": "glm__firewalls",
+    "path": "glm/firewalls.json",
+    "target_model": "z-ai/glm-5.2",
+    "defense_id": "firewalls",
+    "runner_kind": "adapter",
+    "config_hash": "237b7988a305"
+  },
+  {
+    "store_id": "gemini__camel",
+    "path": "gemini/camel.json",
+    "target_model": "google/gemini-3-flash-preview",
+    "defense_id": "camel",
+    "runner_kind": "fork",
+    "config_hash": "6855ecd555c0"
+  },
+  {
+    "store_id": "gemini__fides",
+    "path": "gemini/fides.json",
+    "target_model": "google/gemini-3-flash-preview",
+    "defense_id": "fides",
+    "runner_kind": "fork",
+    "config_hash": "4b82db320d7f"
+  },
+  {
+    "store_id": "gemini__ipiguard",
+    "path": "gemini/ipiguard.json",
+    "target_model": "google/gemini-3-flash-preview",
+    "defense_id": "ipiguard",
+    "runner_kind": "fork",
+    "config_hash": "9a3f1502dbaf"
+  },
+  {
+    "store_id": "gemini__melon",
+    "path": "gemini/melon.json",
+    "target_model": "google/gemini-3-flash-preview",
+    "defense_id": "melon",
+    "runner_kind": "adapter",
+    "config_hash": "13f79632848f"
+  },
+  {
+    "store_id": "gemini__causalarmor",
+    "path": "gemini/causalarmor.json",
+    "target_model": "google/gemini-3-flash-preview",
+    "defense_id": "causalarmor",
+    "runner_kind": "adapter",
+    "config_hash": "8d3e6c8ac1ae"
+  },
+  {
+    "store_id": "gemini__firewalls",
+    "path": "gemini/firewalls.json",
+    "target_model": "google/gemini-3-flash-preview",
+    "defense_id": "firewalls",
+    "runner_kind": "adapter",
+    "config_hash": "216014415ccb"
+  },
+  {
+    "store_id": "deepseek__camel",
+    "path": "deepseek/camel.json",
+    "target_model": "deepseek/deepseek-v4-pro",
+    "defense_id": "camel",
+    "runner_kind": "fork",
+    "config_hash": "35dbd95620e2"
+  },
+  {
+    "store_id": "deepseek__fides",
+    "path": "deepseek/fides.json",
+    "target_model": "deepseek/deepseek-v4-pro",
+    "defense_id": "fides",
+    "runner_kind": "fork",
+    "config_hash": "a3bdb6348ee6"
+  },
+  {
+    "store_id": "deepseek__ipiguard",
+    "path": "deepseek/ipiguard.json",
+    "target_model": "deepseek/deepseek-v4-pro",
+    "defense_id": "ipiguard",
+    "runner_kind": "fork",
+    "config_hash": "1e9e7fd05858"
+  },
+  {
+    "store_id": "deepseek__melon",
+    "path": "deepseek/melon.json",
+    "target_model": "deepseek/deepseek-v4-pro",
+    "defense_id": "melon",
+    "runner_kind": "adapter",
+    "config_hash": "41aecf8f3046"
+  },
+  {
+    "store_id": "deepseek__causalarmor",
+    "path": "deepseek/causalarmor.json",
+    "target_model": "deepseek/deepseek-v4-pro",
+    "defense_id": "causalarmor",
+    "runner_kind": "adapter",
+    "config_hash": "f7ad386acd98"
+  },
+  {
+    "store_id": "deepseek__firewalls",
+    "path": "deepseek/firewalls.json",
+    "target_model": "deepseek/deepseek-v4-pro",
+    "defense_id": "firewalls",
+    "runner_kind": "adapter",
+    "config_hash": "bb4200a703c6"
+  }
+]

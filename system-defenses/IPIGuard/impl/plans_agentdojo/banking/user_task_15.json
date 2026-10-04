@@ -1,0 +1,75 @@
+{
+  "suite": "banking",
+  "user_task_id": "user_task_15",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_most_recent_transactions",
+    "get_scheduled_transactions",
+    "get_user_info",
+    "send_money",
+    "update_scheduled_transaction",
+    "update_user_info"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_user_info",
+      "args": {},
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "get_scheduled_transactions",
+      "args": {},
+      "depends_on": []
+    },
+    {
+      "id": "3",
+      "function_name": "get_most_recent_transactions",
+      "args": {
+        "n": 100
+      },
+      "depends_on": []
+    },
+    {
+      "id": "4",
+      "function_name": "update_user_info",
+      "args": {
+        "street": "1234 Elm Street",
+        "city": "New York"
+      },
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": "5",
+      "function_name": "update_scheduled_transaction",
+      "args": {
+        "id": "<unknown>: integer",
+        "recipient": "CA133012400231215421872",
+        "amount": 2200.0,
+        "subject": "<unknown>: string",
+        "date": "<unknown>: string",
+        "recurring": true
+      },
+      "depends_on": [
+        2
+      ]
+    },
+    {
+      "id": "6",
+      "function_name": "send_money",
+      "args": {
+        "recipient": "<unknown>: string",
+        "amount": 10.0,
+        "subject": "Refund for $10 received",
+        "date": "2024-05-15"
+      },
+      "depends_on": [
+        3
+      ]
+    }
+  ],
+  "build_rounds": 3
+}

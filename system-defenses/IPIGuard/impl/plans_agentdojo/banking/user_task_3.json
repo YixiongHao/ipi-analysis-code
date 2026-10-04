@@ -1,0 +1,26 @@
+{
+  "suite": "banking",
+  "user_task_id": "user_task_3",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_iban",
+    "get_most_recent_transactions"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_most_recent_transactions",
+      "args": {
+        "n": 10
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "get_iban",
+      "args": {},
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

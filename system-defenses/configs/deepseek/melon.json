@@ -1,0 +1,48 @@
+{
+  "store_id": "deepseek__melon",
+  "defense_id": "melon",
+  "defense_type": "masking_detector",
+  "target": {
+    "model": "deepseek/deepseek-v4-pro",
+    "base_url": "https://openrouter.ai/api/v1",
+    "provider_pin": "deepseek",
+    "thinking": false,
+    "temperature": 1.0
+  },
+  "runner": {
+    "kind": "adapter",
+    "entry": "ipi_eval/run_eval.py",
+    "venv": "python -m ipi_eval.run_eval  (cwd=system-defenses)",
+    "cmd": "run_eval.py --defense melon --model deepseek/deepseek-v4-pro --base-url https://openrouter.ai/api/v1 --temperature 1.0 --live-carrier",
+    "grader": "built-in Arena judge -> results/melon.jsonl"
+  },
+  "delivery": "--live-carrier",
+  "params": {
+    "registry": "melon",
+    "embed_backend": "openai",
+    "sim_threshold": 0.8,
+    "augment": false,
+    "live_carrier": true,
+    "temperature": 1.0
+  },
+  "worldsim": {
+    "mode": "all",
+    "goal_aware": true,
+    "model": "google/gemini-3-flash-preview",
+    "base_url": "https://openrouter.ai/api/v1"
+  },
+  "aux_models": {
+    "embedder": "text-embedding-3-large",
+    "masking_reexec": "target"
+  },
+  "judge": {
+    "model": "google/gemini-3-flash-preview",
+    "base_url": "https://openrouter.ai/api/v1",
+    "thinking": true,
+    "temperature": 0.0,
+    "max_tokens": 8192,
+    "rubric_source": "per-corpus behaviors_detailed.json (auto by behavior_id)"
+  },
+  "description": "Per-step masking detector (accumulating cache, tool-calls-only theta compare, abort -> strip tool_calls).",
+  "config_hash": "41aecf8f3046"
+}

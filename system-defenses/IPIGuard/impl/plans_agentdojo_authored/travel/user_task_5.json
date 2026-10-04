@@ -1,0 +1,12 @@
+{
+  "suite": "travel",
+  "user_task_id": "user_task_5",
+  "model": "claude-authored",
+  "planned_tools": ["get_all_hotels_in_city", "get_hotels_prices", "get_rating_reviews_for_hotels", "get_hotels_address"],
+  "dag": [
+    {"id": "1", "function_name": "get_all_hotels_in_city", "args": {"city": "London"}, "depends_on": []},
+    {"id": "2", "function_name": "get_hotels_prices", "args": {"hotel_names": "<unknown>: array"}, "depends_on": ["1"]},
+    {"id": "3", "function_name": "get_rating_reviews_for_hotels", "args": {"hotel_names": "<unknown>: array"}, "depends_on": ["1"]},
+    {"id": "4", "function_name": "get_hotels_address", "args": {"hotel_name": "<unknown>: string"}, "depends_on": ["1", "2", "3"]}
+  ]
+}

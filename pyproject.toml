@@ -1,0 +1,37 @@
+[project]
+name = "ipi-defenses"
+version = "0.1.0"
+description = "Evaluation harness and defense implementations for indirect prompt injection (IPI)."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "requests",
+    "aiohttp",
+    "pydantic",
+    "openai",
+    "ipi-arena-bench",  # LLM client + world-sim, from the ipi_arena_os submodule
+    "agentdojo",        # vendored copy in agentdojo/ (defense adapters + tests import it)
+]
+
+[project.optional-dependencies]
+# Local detector models (StackOne Defender, Granite-Guardian, PromptGuard, DataSentinel)
+detectors = ["torch", "transformers", "onnxruntime==1.21.0"]
+# Figure + store analysis
+analysis = ["duckdb", "matplotlib", "pandas", "pyarrow"]
+# IPIGuard runs its own AgentDojo fork, which needs these on top of the vendored AgentDojo
+ipiguard = ["networkx", "protobuf", "jsonref", "openapi-pydantic", "matplotlib"]
+dev = ["pytest"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+# Scripts run in place (see README); install pulls dependencies only.
+[tool.setuptools]
+packages = []
+py-modules = ["ipi_arena_compat"]  # extends the public ipi_arena_bench (see its docstring)
+
+[tool.uv.sources]
+ipi-arena-bench = { path = "ipi_arena_os", editable = true }
+agentdojo = { path = "agentdojo", editable = true }

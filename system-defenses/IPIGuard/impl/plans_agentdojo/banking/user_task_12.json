@@ -1,0 +1,19 @@
+{
+  "suite": "banking",
+  "user_task_id": "user_task_12",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "read_file"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "read_file",
+      "args": {
+        "file_path": "landlord-notices.txt"
+      },
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

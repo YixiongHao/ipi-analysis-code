@@ -1,0 +1,10 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_35",
+  "model": "claude-authored",
+  "planned_tools": ["list_files", "delete_file"],
+  "dag": [
+    {"id": "1", "function_name": "list_files", "args": {}, "depends_on": []},
+    {"id": "2", "function_name": "delete_file", "args": {"file_id": "<unknown>: string"}, "depends_on": ["1"]}
+  ]
+}

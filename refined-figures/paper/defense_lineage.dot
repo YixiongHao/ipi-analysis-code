@@ -1,0 +1,63 @@
+// Defense landscape / selection lineage for the paper appendix (literature review).
+// Render:  dot -Tpng -Gdpi=200 defense_lineage.dot -o defense_lineage.png
+// Green = evaluated in this work; grey dashed = excluded (reason in node); blue = organizing category.
+// arXiv IDs are shown on each concrete defense; the taxonomy root is Beurer-Kellner et al. 2025.
+digraph defense_lineage {
+  rankdir=LR;
+  ranksep=0.7; nodesep=0.18;
+  bgcolor="white";
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=12,
+        color="#9aa4ad", penwidth=1.1, margin="0.12,0.07"];
+  edge [color="#98a2ab", arrowsize=0.7, penwidth=1.0];
+
+  root [label="IPI defenses", fillcolor="#e9ecef", fontsize=15, penwidth=1.4];
+
+  // ---- two families + out-of-scope ----
+  struct [label="Structural design patterns\n(Beurer-Kellner et al. 2025)", fillcolor="#d7e6f4", fontsize=13];
+  detect [label="Detection-based\n(outside the taxonomy)", fillcolor="#d7e6f4", fontsize=13];
+  train  [label="Training / weight-level\n— out of scope —", fillcolor="#efefef",
+          style="rounded,filled,dashed", fontsize=11];
+  root -> struct; root -> detect; root -> train;
+
+  // ---- design patterns ----
+  node [fillcolor="#eaf1f8", fontsize=11];
+  p_action [label="Action-Selector"];
+  p_plan   [label="Plan-Then-Execute"];
+  p_map    [label="Map-Reduce"];
+  p_dual   [label="Dual-LLM"];
+  p_code   [label="Code-Then-Execute"];
+  p_ctx    [label="Context-Minimization"];
+  struct -> p_action; struct -> p_plan; struct -> p_map;
+  struct -> p_dual; struct -> p_code; struct -> p_ctx;
+
+  // ---- tested structural defenses (green) ----
+  node [fillcolor="#cfe9c9", color="#5a9a52", penwidth=1.3, fontsize=11];
+  d_ipiguard [label="IPIGuard\narXiv:2508.15310"];
+  d_fides    [label="FIDES\narXiv:2505.23643"];
+  d_camel    [label="CaMeL\narXiv:2503.18813"];
+  d_fw       [label="Tool-I/O firewalls\narXiv:2510.05244"];
+  p_plan -> d_ipiguard;
+  p_dual -> d_fides;
+  p_code -> d_camel;
+  p_ctx  -> d_fw;
+
+  // ---- excluded structural (grey dashed, with reason) ----
+  node [fillcolor="#efefef", color="#9aa4ad", penwidth=1.0, style="rounded,filled,dashed", fontsize=10];
+  x_action [label="no general-agent defense"];
+  x_map    [label="RobustRAG (arXiv:2405.15556)\nretrieval-only — excluded"];
+  x_drift  [label="DRIFT (arXiv:2506.12104)\nnear-duplicate of IPIGuard"];
+  p_action -> x_action;
+  p_map    -> x_map;
+  p_plan   -> x_drift;
+
+  // ---- detection family ----
+  node [style="rounded,filled", fillcolor="#cfe9c9", color="#5a9a52", penwidth=1.3, fontsize=11];
+  clf   [label="Classifiers (7, tested)\nCygnal · StackOne · ProtectAI\nGranite Guardian · PromptGuard\nDataSentinel (arXiv:2504.11358) · LLM-judge"];
+  adapt [label="Runtime detection (tested)\nMELON (arXiv:2502.05174)\nCausalArmor (arXiv:2602.07918)"];
+  detect -> clf; detect -> adapt;
+
+  // ---- out-of-scope training defenses (grey dashed) ----
+  node [fillcolor="#efefef", color="#9aa4ad", penwidth=1.0, style="rounded,filled,dashed", fontsize=10];
+  t_all [label="SecAlign (2410.05451) · StruQ (2402.06363)\nInstruction Hierarchy (2404.13208)\nmodify weights — different family"];
+  train -> t_all;
+}

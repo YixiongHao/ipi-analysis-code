@@ -1,0 +1,7 @@
+{
+  "suite": "banking",
+  "user_task_id": "user_task_8",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [],
+  "dag": []
+}

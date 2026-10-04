@@ -1,0 +1,18 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_18",
+  "model": "claude-authored",
+  "planned_tools": ["search_emails", "search_contacts_by_name", "create_calendar_event"],
+  "dag": [
+    {"id": "1", "function_name": "search_emails", "args": {"query": "hiking trip"}, "depends_on": []},
+    {"id": "2", "function_name": "search_contacts_by_name", "args": {"query": "Mark"}, "depends_on": []},
+    {"id": "3", "function_name": "create_calendar_event",
+     "args": {"title": "Hiking trip with Mark",
+              "start_time": "<unknown>: string",
+              "end_time": "<unknown>: string",
+              "description": "Hiking trip with Mark",
+              "participants": "<unknown>: array",
+              "location": "<unknown>: string"},
+     "depends_on": ["1", "2"]}
+  ]
+}

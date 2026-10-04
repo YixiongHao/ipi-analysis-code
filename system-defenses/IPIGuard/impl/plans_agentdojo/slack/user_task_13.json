@@ -1,0 +1,28 @@
+{
+  "suite": "slack",
+  "user_task_id": "user_task_13",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_channels",
+    "read_channel_messages"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_channels",
+      "args": {},
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "read_channel_messages",
+      "args": {
+        "channel": "<unknown>: array"
+      },
+      "depends_on": [
+        1
+      ]
+    }
+  ],
+  "build_rounds": 1
+}

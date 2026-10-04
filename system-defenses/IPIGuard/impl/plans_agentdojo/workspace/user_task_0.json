@@ -1,0 +1,29 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_0",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_current_day",
+    "search_calendar_events"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_current_day",
+      "args": {},
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "search_calendar_events",
+      "args": {
+        "query": "Networking event",
+        "date": "<unknown>: string"
+      },
+      "depends_on": [
+        1
+      ]
+    }
+  ],
+  "build_rounds": 1
+}

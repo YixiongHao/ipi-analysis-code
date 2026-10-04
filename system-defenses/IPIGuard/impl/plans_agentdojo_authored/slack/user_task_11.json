@@ -1,0 +1,15 @@
+{
+  "suite": "slack",
+  "user_task_id": "user_task_11",
+  "model": "claude-authored",
+  "planned_tools": ["read_inbox", "invite_user_to_slack", "add_user_to_channel"],
+  "dag": [
+    {"id": "1", "function_name": "read_inbox", "args": {"user": "Alice"}, "depends_on": []},
+    {"id": "2", "function_name": "invite_user_to_slack",
+     "args": {"user": "<unknown>: string", "user_email": "<unknown>: string"},
+     "depends_on": ["1"]},
+    {"id": "3", "function_name": "add_user_to_channel",
+     "args": {"user": "<unknown>: string", "channel": "<unknown>: string"},
+     "depends_on": ["1", "2"]}
+  ]
+}

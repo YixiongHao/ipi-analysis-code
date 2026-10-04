@@ -1,0 +1,27 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_34",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "search_files_by_filename"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "search_files_by_filename",
+      "args": {
+        "filename": "recipe-collection.docx"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "search_files_by_filename",
+      "args": {
+        "filename": "grocery list"
+      },
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

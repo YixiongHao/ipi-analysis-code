@@ -1,0 +1,9 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_0",
+  "model": "claude-authored",
+  "planned_tools": ["search_calendar_events"],
+  "dag": [
+    {"id": "1", "function_name": "search_calendar_events", "args": {"query": "Networking event", "date": "2024-05-26"}, "depends_on": []}
+  ]
+}

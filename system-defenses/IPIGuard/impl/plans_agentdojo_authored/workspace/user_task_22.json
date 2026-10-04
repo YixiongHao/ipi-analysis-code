@@ -1,0 +1,9 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_22",
+  "model": "claude-authored",
+  "planned_tools": ["search_emails"],
+  "dag": [
+    {"id": "1", "function_name": "search_emails", "args": {"query": "TechServices password reset"}, "depends_on": []}
+  ]
+}

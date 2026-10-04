@@ -1,0 +1,13 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_25",
+  "model": "claude-authored",
+  "planned_tools": ["search_files_by_filename", "search_contacts_by_name", "send_email"],
+  "dag": [
+    {"id": "1", "function_name": "search_files_by_filename", "args": {"filename": "meeting minutes"}, "depends_on": []},
+    {"id": "2", "function_name": "search_contacts_by_name", "args": {"query": "<unknown>: string"}, "depends_on": ["1"]},
+    {"id": "3", "function_name": "send_email",
+     "args": {"recipients": "<unknown>: array", "subject": "<unknown>: string", "body": "<unknown>: string"},
+     "depends_on": ["1", "2"]}
+  ]
+}

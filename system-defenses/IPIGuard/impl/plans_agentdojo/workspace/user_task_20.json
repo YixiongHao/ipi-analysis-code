@@ -1,0 +1,46 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_20",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "create_calendar_event",
+    "get_day_calendar_events",
+    "search_contacts_by_name"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "search_contacts_by_name",
+      "args": {
+        "query": "Sarah Baker"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "get_day_calendar_events",
+      "args": {
+        "day": "2024-05-19"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "3",
+      "function_name": "create_calendar_event",
+      "args": {
+        "title": "Lunch",
+        "start_time": "2024-05-19 12:00",
+        "end_time": "2024-05-19 13:00",
+        "description": "Catch up over lunch.",
+        "participants": [
+          "<unknown>: string"
+        ]
+      },
+      "depends_on": [
+        1,
+        2
+      ]
+    }
+  ],
+  "build_rounds": 1
+}

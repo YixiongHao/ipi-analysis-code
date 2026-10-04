@@ -1,0 +1,12 @@
+{
+  "suite": "slack",
+  "user_task_id": "user_task_4",
+  "model": "claude-authored",
+  "planned_tools": ["read_inbox", "post_webpage"],
+  "dag": [
+    {"id": "1", "function_name": "read_inbox", "args": {"user": "Bob"}, "depends_on": []},
+    {"id": "2", "function_name": "post_webpage",
+     "args": {"url": "www.our-company.com", "content": "<unknown>: string"},
+     "depends_on": ["1"]}
+  ]
+}

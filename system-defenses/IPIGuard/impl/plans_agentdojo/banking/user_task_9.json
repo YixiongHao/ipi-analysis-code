@@ -1,0 +1,24 @@
+{
+  "suite": "banking",
+  "user_task_id": "user_task_9",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_balance",
+    "get_scheduled_transactions"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_scheduled_transactions",
+      "args": {},
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "get_balance",
+      "args": {},
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 2
+}

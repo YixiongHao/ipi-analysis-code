@@ -1,0 +1,19 @@
+{
+  "suite": "banking",
+  "user_task_id": "user_task_7",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_most_recent_transactions"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_most_recent_transactions",
+      "args": {
+        "n": 100
+      },
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

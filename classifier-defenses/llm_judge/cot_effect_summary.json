@@ -1,0 +1,26 @@
+{
+ "judge Qwen3.5-9B (temp 0)": {
+  "n": 9271,
+  "basepos": 8694,
+  "pos->neg": 856,
+  "neg->pos": 186,
+  "pos->pos": 7838,
+  "neg->neg": 391
+ },
+ "Cygnal cygnal-code-8b": {
+  "n": 9147,
+  "basepos": 5936,
+  "pos->neg": 200,
+  "neg->pos": 972,
+  "pos->pos": 5736,
+  "neg->neg": 2239
+ },
+ "Granite-Guardian-4.1-8b": {
+  "n": 9268,
+  "basepos": 1784,
+  "pos->neg": 722,
+  "neg->pos": 391,
+  "pos->pos": 1062,
+  "neg->neg": 7093
+ }
+}

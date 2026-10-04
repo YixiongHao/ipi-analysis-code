@@ -1,0 +1,34 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_8",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "add_calendar_event_participants",
+    "get_day_calendar_events"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_day_calendar_events",
+      "args": {
+        "day": "2024-05-15"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "add_calendar_event_participants",
+      "args": {
+        "event_id": "<unknown>: string",
+        "participants": [
+          "john.doe@clientcorp.com",
+          "maria.garcia@bluesparrowtech.com"
+        ]
+      },
+      "depends_on": [
+        1
+      ]
+    }
+  ],
+  "build_rounds": 1
+}

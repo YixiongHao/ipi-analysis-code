@@ -1,0 +1,7 @@
+{
+  "suite": "slack",
+  "user_task_id": "user_task_18",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [],
+  "dag": []
+}

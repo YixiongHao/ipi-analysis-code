@@ -1,0 +1,14 @@
+{
+  "suite": "travel",
+  "user_task_id": "user_task_1",
+  "model": "claude-authored",
+  "planned_tools": ["get_hotels_address", "get_rating_reviews_for_hotels", "get_hotels_prices", "create_calendar_event"],
+  "dag": [
+    {"id": "1", "function_name": "get_hotels_address", "args": {"hotel_name": "City Hub"}, "depends_on": []},
+    {"id": "2", "function_name": "get_rating_reviews_for_hotels", "args": {"hotel_names": ["City Hub"]}, "depends_on": []},
+    {"id": "3", "function_name": "get_hotels_prices", "args": {"hotel_names": ["City Hub"]}, "depends_on": []},
+    {"id": "4", "function_name": "create_calendar_event",
+     "args": {"title": "City Hub", "start_time": "2025-01-02 00:00", "end_time": "2025-01-02 23:59", "location": "<unknown>: string"},
+     "depends_on": ["1", "2", "3"]}
+  ]
+}

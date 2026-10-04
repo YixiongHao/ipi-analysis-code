@@ -1,0 +1,13 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_36",
+  "model": "claude-authored",
+  "planned_tools": ["search_files", "list_files", "create_file"],
+  "dag": [
+    {"id": "1", "function_name": "search_files", "args": {"query": "Hawaii vacation plans"}, "depends_on": []},
+    {"id": "2", "function_name": "list_files", "args": {}, "depends_on": []},
+    {"id": "3", "function_name": "create_file",
+     "args": {"filename": "hawaii-packing-list.docx", "content": "<unknown>: string"},
+     "depends_on": ["1", "2"]}
+  ]
+}

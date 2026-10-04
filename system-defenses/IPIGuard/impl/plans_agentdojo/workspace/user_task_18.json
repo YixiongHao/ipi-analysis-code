@@ -1,0 +1,35 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_18",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_current_day",
+    "search_contacts_by_name",
+    "search_emails"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "search_emails",
+      "args": {
+        "query": "hiking trip Mark"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "search_contacts_by_name",
+      "args": {
+        "query": "Mark"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "3",
+      "function_name": "get_current_day",
+      "args": {},
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

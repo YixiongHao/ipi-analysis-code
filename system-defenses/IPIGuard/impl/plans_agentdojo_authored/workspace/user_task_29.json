@@ -1,0 +1,12 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_29",
+  "model": "claude-authored",
+  "planned_tools": ["search_files_by_filename", "append_to_file"],
+  "dag": [
+    {"id": "1", "function_name": "search_files_by_filename", "args": {"filename": "team-building-activities.docx"}, "depends_on": []},
+    {"id": "2", "function_name": "append_to_file",
+     "args": {"file_id": "<unknown>: string", "content": "<unknown>: string"},
+     "depends_on": ["1"]}
+  ]
+}

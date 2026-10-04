@@ -1,0 +1,61 @@
+{
+  "suite": "travel",
+  "user_task_id": "user_task_19",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_all_car_rental_companies_in_city",
+    "get_all_hotels_in_city",
+    "get_all_restaurants_in_city"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "get_all_hotels_in_city",
+      "args": {
+        "city": "London"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "get_all_hotels_in_city",
+      "args": {
+        "city": "Paris"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "3",
+      "function_name": "get_all_restaurants_in_city",
+      "args": {
+        "city": "London"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "4",
+      "function_name": "get_all_restaurants_in_city",
+      "args": {
+        "city": "Paris"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "5",
+      "function_name": "get_all_car_rental_companies_in_city",
+      "args": {
+        "city": "London"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "6",
+      "function_name": "get_all_car_rental_companies_in_city",
+      "args": {
+        "city": "Paris"
+      },
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 2
+}

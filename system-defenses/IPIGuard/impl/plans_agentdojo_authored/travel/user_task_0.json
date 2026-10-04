@@ -1,0 +1,13 @@
+{
+  "suite": "travel",
+  "user_task_id": "user_task_0",
+  "model": "claude-authored",
+  "planned_tools": ["get_rating_reviews_for_hotels", "reserve_hotel"],
+  "dag": [
+    {"id": "1", "function_name": "get_rating_reviews_for_hotels",
+     "args": {"hotel_names": ["Le Marais Boutique"]}, "depends_on": []},
+    {"id": "2", "function_name": "reserve_hotel",
+     "args": {"hotel": "Le Marais Boutique", "start_day": "2025-01-11", "end_day": "2025-01-15"},
+     "depends_on": ["1"]}
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "per_fp_set": {
+    "SWE-rebench": {
+      "op_single_fpr_tpr": [
+        0.058,
+        0.6618
+      ],
+      "op_multi_fpr_tpr": [
+        0.0512,
+        0.6912
+      ],
+      "aux_veto_lowers_fp": true,
+      "aux_fp>tp_sep_auc": 0.77,
+      "tpr_at_matched_fpr": {
+        "main_sweep": {
+          "0.01": 0.0,
+          "0.02": 0.344,
+          "0.03": 0.473,
+          "0.05": 0.587,
+          "0.08": 0.737
+        },
+        "aux_sweep_main0.5": {
+          "0.01": 0.371,
+          "0.02": 0.416,
+          "0.03": 0.501,
+          "0.05": 0.687,
+          "0.08": 0.748
+        }
+      }
+    },
+    "Toolathlon": {
+      "op_single_fpr_tpr": [
+        0.0842,
+        0.6618
+      ],
+      "op_multi_fpr_tpr": [
+        0.0982,
+        0.6912
+      ],
+      "aux_veto_lowers_fp": false,
+      "aux_fp>tp_sep_auc": 0.589,
+      "tpr_at_matched_fpr": {
+        "main_sweep": {
+          "0.01": 0.208,
+          "0.02": 0.323,
+          "0.03": 0.416,
+          "0.05": 0.515,
+          "0.08": 0.652
+        },
+        "aux_sweep_main0.5": {
+          "0.01": 0.08,
+          "0.02": 0.164,
+          "0.03": 0.285,
+          "0.05": 0.411,
+          "0.08": 0.568
+        }
+      }
+    }
+  },
+  "note": "aux sweep at fixed main = block iff main>=M AND aux<a, swept over saved scores, per FP set. The multi-head veto lowers FP only where benign FPs have higher aux than injections (sep AUC > 0.5); on Toolathlon they do not, so the default multi-head rule raises FP vs single-head."
+}

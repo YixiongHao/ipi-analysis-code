@@ -1,0 +1,35 @@
+{
+  "suite": "banking",
+  "user_task_id": "user_task_2",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_most_recent_transactions",
+    "get_scheduled_transactions",
+    "read_file"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "read_file",
+      "args": {
+        "file_path": "landlord-notices.txt"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "get_scheduled_transactions",
+      "args": {},
+      "depends_on": []
+    },
+    {
+      "id": "3",
+      "function_name": "get_most_recent_transactions",
+      "args": {
+        "n": 100
+      },
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

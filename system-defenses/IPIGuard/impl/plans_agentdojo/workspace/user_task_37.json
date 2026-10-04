@@ -1,0 +1,7 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_37",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [],
+  "dag": []
+}

@@ -1,0 +1,9 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_17",
+  "model": "claude-authored",
+  "planned_tools": ["search_emails"],
+  "dag": [
+    {"id": "1", "function_name": "search_emails", "args": {"query": "hiking trip"}, "depends_on": []}
+  ]
+}

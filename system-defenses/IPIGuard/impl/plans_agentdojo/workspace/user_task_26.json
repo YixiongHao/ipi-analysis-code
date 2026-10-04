@@ -1,0 +1,17 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_26",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "list_files"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "list_files",
+      "args": {},
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

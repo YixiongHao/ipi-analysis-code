@@ -1,0 +1,35 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_32",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "list_files",
+    "search_files",
+    "search_files_by_filename"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "search_files",
+      "args": {
+        "query": "Hawaii packing list vacation"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "search_files_by_filename",
+      "args": {
+        "filename": "hawaii"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "3",
+      "function_name": "list_files",
+      "args": {},
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

@@ -1,0 +1,14 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_12",
+  "model": "claude-authored",
+  "planned_tools": ["get_day_calendar_events", "create_calendar_event"],
+  "dag": [
+    {"id": "1", "function_name": "get_day_calendar_events",
+     "args": {"day": "2024-05-19"},
+     "depends_on": []},
+    {"id": "2", "function_name": "create_calendar_event",
+     "args": {"title": "Follow-up meeting", "start_time": "<unknown>: string", "end_time": "<unknown>: string", "description": "Follow-up meeting to discuss the project."},
+     "depends_on": ["1"]}
+  ]
+}

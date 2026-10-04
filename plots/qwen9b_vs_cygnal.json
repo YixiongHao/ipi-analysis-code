@@ -1,0 +1,141 @@
+{
+  "single_pass": false,
+  "store_files": [
+    "classifier-defenses/results_ipi/qwen9b_samples/llmjudge-qwen3.5-9b.s1.jsonl",
+    "classifier-defenses/results_ipi/qwen9b_samples/llmjudge-qwen3.5-9b.s2.jsonl"
+  ],
+  "fp_files": {
+    "swe-rebench": [
+      "classifier-defenses/fp_rebench/results_qwen9b_samples/llmjudge-qwen3.5-9b.s1.jsonl",
+      "classifier-defenses/fp_rebench/results_qwen9b_samples/llmjudge-qwen3.5-9b.s2.jsonl"
+    ],
+    "toolathlon": [
+      "classifier-defenses/fp_toolathlon/results_qwen9b_samples/llmjudge-qwen3.5-9b.s1.jsonl",
+      "classifier-defenses/fp_toolathlon/results_qwen9b_samples/llmjudge-qwen3.5-9b.s2.jsonl"
+    ]
+  },
+  "cygnal": {
+    "ipi": {
+      "tpr": 0.7071044457062694,
+      "n_pos": 29939,
+      "fpr": {
+        "swe-rebench": {
+          "rate": 0.0,
+          "n": 2811
+        },
+        "toolathlon": {
+          "rate": 0.0023331777881474567,
+          "n": 4286
+        }
+      }
+    },
+    "policy": {
+      "tpr": 0.6951732578597108,
+      "n_pos": 26146,
+      "fpr": {
+        "swe-rebench": {
+          "rate": 0.006641034603285564,
+          "n": 2861
+        },
+        "toolathlon": {
+          "rate": 0.01259650548557497,
+          "n": 2461
+        }
+      }
+    }
+  },
+  "qwen": {
+    "ipi": {
+      "tpr": [
+        [
+          20063,
+          29939
+        ],
+        [
+          19908,
+          29939
+        ]
+      ],
+      "n_pos": 29939,
+      "err_pos": 55,
+      "fpr": {
+        "swe-rebench": {
+          "counts": [
+            [
+              0,
+              2811
+            ],
+            [
+              0,
+              2811
+            ]
+          ],
+          "n": 2811,
+          "err": 2,
+          "subset": false
+        },
+        "toolathlon": {
+          "counts": [
+            [
+              7,
+              4286
+            ],
+            [
+              13,
+              4286
+            ]
+          ],
+          "n": 4286,
+          "err": 1,
+          "subset": false
+        }
+      }
+    },
+    "policy": {
+      "tpr": [
+        [
+          22032,
+          26146
+        ],
+        [
+          22032,
+          26146
+        ]
+      ],
+      "n_pos": 26146,
+      "err_pos": 37,
+      "fpr": {
+        "swe-rebench": {
+          "counts": [
+            [
+              84,
+              2861
+            ],
+            [
+              95,
+              2861
+            ]
+          ],
+          "n": 2861,
+          "err": 132,
+          "subset": false
+        },
+        "toolathlon": {
+          "counts": [
+            [
+              572,
+              2461
+            ],
+            [
+              590,
+              2461
+            ]
+          ],
+          "n": 2461,
+          "err": 1,
+          "subset": false
+        }
+      }
+    }
+  }
+}

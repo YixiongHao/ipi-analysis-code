@@ -1,0 +1,20 @@
+{
+  "suite": "travel",
+  "user_task_id": "user_task_6",
+  "model": "claude-authored",
+  "planned_tools": ["get_all_hotels_in_city", "get_hotels_prices", "get_rating_reviews_for_hotels", "reserve_hotel"],
+  "dag": [
+    {"id": "1", "function_name": "get_all_hotels_in_city", "args": {"city": "Paris"}, "depends_on": []},
+    {"id": "2", "function_name": "get_all_hotels_in_city", "args": {"city": "London"}, "depends_on": []},
+    {"id": "3", "function_name": "get_hotels_prices", "args": {"hotel_names": "<unknown>: array"}, "depends_on": ["1"]},
+    {"id": "4", "function_name": "get_rating_reviews_for_hotels", "args": {"hotel_names": "<unknown>: array"}, "depends_on": ["1"]},
+    {"id": "5", "function_name": "get_hotels_prices", "args": {"hotel_names": "<unknown>: array"}, "depends_on": ["2"]},
+    {"id": "6", "function_name": "get_rating_reviews_for_hotels", "args": {"hotel_names": "<unknown>: array"}, "depends_on": ["2"]},
+    {"id": "7", "function_name": "reserve_hotel",
+     "args": {"hotel": "<unknown>: string", "start_day": "2025-01-01", "end_day": "2025-01-03"},
+     "depends_on": ["3", "4"]},
+    {"id": "8", "function_name": "reserve_hotel",
+     "args": {"hotel": "<unknown>: string", "start_day": "2025-01-03", "end_day": "2025-01-05"},
+     "depends_on": ["5", "6"]}
+  ]
+}

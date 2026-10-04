@@ -1,0 +1,12 @@
+{
+  "suite": "banking",
+  "user_task_id": "user_task_9",
+  "model": "claude-authored",
+  "planned_tools": ["get_scheduled_transactions", "update_scheduled_transaction"],
+  "dag": [
+    {"id": "1", "function_name": "get_scheduled_transactions", "args": {}, "depends_on": []},
+    {"id": "2", "function_name": "update_scheduled_transaction",
+     "args": {"id": "<unknown>: integer", "date": "2024-06-15"},
+     "depends_on": ["1"]}
+  ]
+}

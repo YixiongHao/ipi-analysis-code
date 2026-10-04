@@ -1,0 +1,57 @@
+{
+  "positives_store_sites": 29939,
+  "per_fp_set": {
+    "SWE-rebench (coding)": {
+      "n_neg_defender": 2811,
+      "n_neg_cygnal": 2811,
+      "defender_auc": 0.9266,
+      "op_defender_single@0.64_fpr_tpr": [
+        0.058,
+        0.6618
+      ],
+      "op_defender_multihead_fpr_tpr": [
+        0.0537,
+        0.7051
+      ],
+      "op_cygnal_fpr_tpr": [
+        0.0,
+        0.7071
+      ]
+    },
+    "Toolathlon (admin)": {
+      "n_neg_defender": 4286,
+      "n_neg_cygnal": 4286,
+      "defender_auc": 0.9149,
+      "op_defender_single@0.64_fpr_tpr": [
+        0.0842,
+        0.6618
+      ],
+      "op_defender_multihead_fpr_tpr": [
+        0.1008,
+        0.7051
+      ],
+      "op_cygnal_fpr_tpr": [
+        0.0023,
+        0.7071
+      ]
+    }
+  },
+  "detection_by_corpus": {
+    "Defender single@0.64": {
+      "ipi_2025": 0.6658,
+      "ipi_2026_q1": 0.6694,
+      "ipi_2026_q2": 0.5975
+    },
+    "Defender multi-head": {
+      "ipi_2025": 0.6532,
+      "ipi_2026_q1": 0.7172,
+      "ipi_2026_q2": 0.6908
+    },
+    "Cygnal ipi": {
+      "ipi_2025": 0.8805,
+      "ipi_2026_q1": 0.6934,
+      "ipi_2026_q2": 0.5472
+    }
+  },
+  "note": "One ROC panel per clean FP set (SWE-rebench coding, Toolathlon admin). Defender ROC = post-hoc single-head threshold sweep over saved per-site scores; Cygnal = fixed hard-label operating point. AgentDojo benign excluded (phishing-flavored fixtures + StackOne train set)."
+}

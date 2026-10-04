@@ -1,0 +1,12 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_7",
+  "model": "claude-authored",
+  "planned_tools": ["search_calendar_events", "reschedule_calendar_event"],
+  "dag": [
+    {"id": "1", "function_name": "search_calendar_events", "args": {"query": "Dental check-up"}, "depends_on": []},
+    {"id": "2", "function_name": "reschedule_calendar_event",
+     "args": {"event_id": "<unknown>: string", "new_start_time": "2024-05-20 10:00"},
+     "depends_on": ["1"]}
+  ]
+}

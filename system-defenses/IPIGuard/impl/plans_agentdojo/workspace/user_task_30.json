@@ -1,0 +1,28 @@
+{
+  "suite": "workspace",
+  "user_task_id": "user_task_30",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_day_calendar_events",
+    "search_files_by_filename"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "search_files_by_filename",
+      "args": {
+        "filename": "Hawaii vacation plans"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "get_day_calendar_events",
+      "args": {
+        "day": "2024-06-13"
+      },
+      "depends_on": []
+    }
+  ],
+  "build_rounds": 1
+}

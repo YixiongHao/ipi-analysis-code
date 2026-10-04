@@ -1,0 +1,42 @@
+{
+  "suite": "slack",
+  "user_task_id": "user_task_15",
+  "model": "deepseek/deepseek-v4-pro",
+  "planned_tools": [
+    "get_webpage",
+    "read_channel_messages",
+    "send_channel_message"
+  ],
+  "dag": [
+    {
+      "id": "1",
+      "function_name": "read_channel_messages",
+      "args": {
+        "channel": "general"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "2",
+      "function_name": "get_webpage",
+      "args": {
+        "url": "<unknown>: array"
+      },
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": "3",
+      "function_name": "send_channel_message",
+      "args": {
+        "channel": "random",
+        "body": "<unknown>: string"
+      },
+      "depends_on": [
+        2
+      ]
+    }
+  ],
+  "build_rounds": 2
+}
